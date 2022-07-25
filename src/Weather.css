@@ -1,0 +1,28 @@
+.Weather a {
+  color: white;
+}
+
+.Weather a:hover {
+  color: white;
+}
+
+.Weather .check:hover {
+  font-weight: 900;
+}
+
+.Weather span {
+  font-size: 14px;
+}
+
+.Weather form input {
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid white;
+  border-radius: 4px;
+  color: white;
+  padding: 0 5px;
+}
+
+.Weather .submit:hover {
+  border: 3px solid white;
+  font-weight: bold;
+}

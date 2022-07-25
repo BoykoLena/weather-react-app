@@ -1,0 +1,11 @@
+.App {
+  max-width: 800px;
+  min-width: 600px;
+  margin: 20px auto;
+  background-color: #2a52be;
+  padding: 35px;
+  outline: 1px solid white;
+  outline-offset: -15px;
+  color: white;
+  font-family: monospace;
+}
