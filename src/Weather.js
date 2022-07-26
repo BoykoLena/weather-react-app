@@ -196,7 +196,11 @@ function Weather() {
         {day} {hours}:{minutes}
       </div>
       <div className="fs-3">
-        <a href="/" className="text-decoration-none fs-3" onClick={cels}>
+        <a
+          href="/"
+          className="text-decoration-none fs-3 itd-active"
+          onClick={cels}
+        >
           °C
         </a>{" "}
         |{" "}

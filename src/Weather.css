@@ -26,3 +26,7 @@
   border: 3px solid white;
   font-weight: bold;
 }
+
+.itd-active {
+  font-weight: 900;
+}
