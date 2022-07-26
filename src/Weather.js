@@ -102,12 +102,12 @@ function Weather(props) {
             </div>
           </div>
         </div>
-        {/* <div className="d-flex justify-content-around">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div> */}
+        <div className="d-flex justify-content-around">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </div>
     );
   } else {
