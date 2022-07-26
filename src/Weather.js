@@ -6,6 +6,7 @@ import axios from "axios";
 import Updated from "./Updated";
 import Moment from "react-moment";
 import Today from "./Today";
+import Icon from "./Icon";
 
 function Weather(props) {
   const apiKey = "70d3ffa9a4880bd0019219a54fdf13d4";
@@ -47,7 +48,7 @@ function Weather(props) {
       temp: responce.data.main.temp,
       description: responce.data.weather[0].description,
       date: new Date(responce.data.dt * 1000),
-      icon: `./img/${responce.data.weather[0].icon}.png`,
+      icon: responce.data.weather[0].icon,
     });
   };
 
@@ -91,14 +92,8 @@ function Weather(props) {
         <div className="text-center mb-5">
           <Today date={weatherData.date} />
           <div className="d-flex justify-content-center align-items-center">
-            <img
-              className="me-4"
-              width={70}
-              height={70}
-              src={weatherData.icon}
-              alt="weather-icon"
-            />
-            <div>
+            <Icon icon={weatherData.icon} />
+            <div className="ms-1">
               <h2 className="mb-0">
                 {Math.round(weatherData.temp)}
                 {unit}
