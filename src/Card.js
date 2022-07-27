@@ -1,16 +1,19 @@
-function Card() {
+import Day from "./Day";
+import ForecasIcon from "./ForecastIcon";
+import TodayTemp from "./TodayTemp";
+
+function Card(props) {
   return (
     <div className="text-center">
-      <h5>Monday</h5>
-      <img
-        className="mb-2"
-        width={40}
-        height={40}
-        src="./img/mist.png"
-        alt="description"
-      />
-      <h5 className="mb-0">26°C</h5>
-      <p className="m-0">15°C</p>
+      <Day date={props.data.dt} />
+      <ForecasIcon icon={props.data.weather[0].icon} />
+      <h5 className="mb-0">
+        {" "}
+        <TodayTemp temp={props.data.temp.day} unit={props.unit} />
+      </h5>
+      <div className="m-0">
+        <TodayTemp temp={props.data.temp.min} unit={props.unit} />
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import Today from "./Today";
 import Icon from "./Icon";
 import TodayTemp from "./TodayTemp";
+import WeatherForecast from "./WeatherForecast";
 
 function DisplayWeather(props) {
   const [unit, setUnit] = useState("celsius");
@@ -39,6 +40,12 @@ function DisplayWeather(props) {
             <p className="m-0">{props.data.description}</p>
           </div>
         </div>
+        <WeatherForecast
+          lat={props.data.lat}
+          lon={props.data.lon}
+          apiKey={props.apiKey}
+          unit={unit}
+        />
       </div>
     );
   } else {
@@ -64,6 +71,11 @@ function DisplayWeather(props) {
             <p className="m-0">{props.data.description}</p>
           </div>
         </div>
+        <WeatherForecast
+          lat={props.data.lat}
+          lon={props.data.lon}
+          apiKey={props.apiKey}
+        />
       </div>
     );
   }

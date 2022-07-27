@@ -1,14 +1,13 @@
 import { useState } from "react";
 import "./Weather.css";
 import "bootstrap/dist/css/bootstrap.css";
-import Card from "./Card";
 import axios from "axios";
 import Updated from "./Updated";
 import Moment from "react-moment";
 import DisplayWeather from "./DisplayWeather";
 
 function Weather(props) {
-  const apiKey = "70d3ffa9a4880bd0019219a54fdf13d4";
+  const apiKey = "7bfbdc99c12c5913c47ae1ecbf76326c";
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
@@ -30,6 +29,7 @@ function Weather(props) {
   };
 
   const correctCity = (event) => {
+    event.preventDefault();
     setCity(event.target.value);
   };
 
@@ -47,6 +47,8 @@ function Weather(props) {
       description: responce.data.weather[0].description,
       date: new Date(responce.data.dt * 1000),
       icon: responce.data.weather[0].icon,
+      lat: responce.data.coord.lat,
+      lon: responce.data.coord.lon,
     });
   };
 
@@ -78,13 +80,7 @@ function Weather(props) {
         <div className="mb-2">
           <Moment format="dddd HH:mm:ss" interval={1000} />
         </div>
-        <DisplayWeather data={weatherData} />
-        <div className="d-flex justify-content-around">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        <DisplayWeather data={weatherData} apiKey={apiKey} />
       </div>
     );
   } else {
