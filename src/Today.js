@@ -29,9 +29,9 @@ function Today(props) {
   let month = months[props.date.getMonth()];
   let year = props.date.getFullYear();
   return (
-    <div>
+    <div className="text-center">
       <h2>{day}</h2>
-      <h2 className="mb-4">
+      <h2 className="mb-2">
         {date} {month} {year}
       </h2>
     </div>

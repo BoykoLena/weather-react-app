@@ -5,14 +5,12 @@ import Card from "./Card";
 import axios from "axios";
 import Updated from "./Updated";
 import Moment from "react-moment";
-import Today from "./Today";
-import Icon from "./Icon";
+import DisplayWeather from "./DisplayWeather";
 
 function Weather(props) {
   const apiKey = "70d3ffa9a4880bd0019219a54fdf13d4";
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [unit, setUnit] = useState("°C");
 
   const searchCity = () => {
     let urlApi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -80,28 +78,7 @@ function Weather(props) {
         <div className="mb-2">
           <Moment format="dddd HH:mm:ss" interval={1000} />
         </div>
-        <div className="fs-3">
-          <a href="/" className="text-decoration-none fs-3 itd-active">
-            °C
-          </a>{" "}
-          |{" "}
-          <a href="/" className="text-decoration-none fs-3">
-            °F
-          </a>
-        </div>
-        <div className="text-center mb-5">
-          <Today date={weatherData.date} />
-          <div className="d-flex justify-content-center align-items-center">
-            <Icon icon={weatherData.icon} />
-            <div className="ms-1">
-              <h2 className="mb-0">
-                {Math.round(weatherData.temp)}
-                {unit}
-              </h2>
-              <p className="m-0">{weatherData.description}</p>
-            </div>
-          </div>
-        </div>
+        <DisplayWeather data={weatherData} />
         <div className="d-flex justify-content-around">
           <Card />
           <Card />
