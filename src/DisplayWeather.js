@@ -33,7 +33,9 @@ function DisplayWeather(props) {
         <div className="d-flex justify-content-center align-items-center">
           <Icon icon={props.data.icon} />
           <div className="ms-1">
-            <TodayTemp temp={props.data.temp} unit={unit} />
+            <h2 className="text-center mb-0">
+              <TodayTemp temp={props.data.temp} unit={unit} />
+            </h2>
             <p className="m-0">{props.data.description}</p>
           </div>
         </div>
@@ -56,7 +58,9 @@ function DisplayWeather(props) {
         <div className="d-flex justify-content-center align-items-center">
           <Icon icon={props.data.icon} />
           <div className="ms-1">
-            <TodayTemp temp={props.data.temp} />
+            <h2 className="text-center mb-0">
+              <TodayTemp temp={props.data.temp} unit={unit} />
+            </h2>
             <p className="m-0">{props.data.description}</p>
           </div>
         </div>
