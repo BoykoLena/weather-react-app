@@ -8,7 +8,7 @@ function WeatherForecast(props) {
 
   useEffect(() => {
     setLoad(false);
-  }, [props]);
+  }, [props.lat, props.lon]);
 
   const ShowResponce = (responce) => {
     setForecast(responce.data.daily);
